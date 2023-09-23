@@ -6,7 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 public interface UserRepository extends CrudRepository <User,Integer>{
-    @Query("Select u from user u Where u.username=:username")
+//    @Query("Select u from user u Where u.username=:username")
+    @Query("SELECT u FROM User u WHERE u.username = :username")
+
     public User getUserByUserName(@Param("username") String username);
 
 }
